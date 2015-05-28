@@ -28,6 +28,7 @@ requirements:
     - jsonschema
     - pims
     - tifffile
+    - boltons
 
 test:
   requires:
