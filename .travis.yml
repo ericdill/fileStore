@@ -26,12 +26,13 @@ before_install:
   - chmod +x ~/scripts/*.sh
   # install miniconda/anaconda-client/conda-build
   - . ~/scripts/install-miniconda.sh
-  - . ~/scripts/init-filestore.sh
+  # - . ~/scripts/init-filestore.sh
 
 install:
   - export GIT_FULL_HASH=`git rev-parse HEAD`
   - conda update conda
   - conda create -n testenv pip nose python=$TRAVIS_PYTHON_VERSION pymongo six pyyaml numpy h5py jsonschema boltons
+  - conda install -n testenv nslsii_dev_configuration
   - source activate testenv
   - conda install -c soft-matter pims
   - pip install coveralls
