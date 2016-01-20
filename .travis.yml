@@ -55,12 +55,17 @@ install:
 script:
   - python run_tests.py
   # build the conda package on travis
-  - . ~/scripts/conda-build.sh
+  - if [[ $DEV == 'false' ]]; then
+      . ~/scripts/conda-build.sh;
+    fi;
 
 after_success:
   - coveralls
   # upload the conda package to the $ANACONDA_CHANNEL in $ANACONDA_USER
-  - . ~/scripts/anaconda-upload.sh
+  - if [[ $DEV == 'false' ]]; then
+      . ~/scripts/anaconda-upload.sh;
+    fi;
+
 
 after_failure:
   - . ~/scripts/debug.sh
