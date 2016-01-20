@@ -49,7 +49,6 @@ install:
   - source activate testenv
   - conda install -c soft-matter pims
   - pip install coveralls
-  - 'pip install https://github.com/NSLS-II/doct/zipball/master#egg=doct'
   - python setup.py install
 
 
