@@ -41,7 +41,7 @@ install:
   # install the dev packages of any of our dependencies
   - if [[ $DEV == 'true' ]]; then
       conda config --remove channels lightsource2 --force;
-      conda config --add channels lightsource2/channels/development;
+      conda config --add channels lightsource2/channels/development --force;
     fi;
   # show the current state of the conda config.
   - conda info
