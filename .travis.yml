@@ -2,7 +2,7 @@ language: python
 env:
   - DEV=true
   - DEV=false
-  global:
+  - global:
     - ANACONDA_USER=lightsource2
     # if ANACONDA_CHANNEL is not defined then the conda package will be
     # uploaded to the main channel.
